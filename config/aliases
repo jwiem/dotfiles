@@ -1,0 +1,11 @@
+alias lg="lazygit"
+alias ld="lazydocker"
+
+# Filesystem aliases
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+
+# reload zsh config
+alias reload='RELOAD=1 source ~/.zshrc'
