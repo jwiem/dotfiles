@@ -6,7 +6,7 @@ local options = {
 }
 
 if platform.is_mac then
-   options.default_prog = { '/opt/homebrew/bin/zsh', '-l' }
+   options.default_prog = { '/bin/zsh', '-l' }
    options.launch_menu = {
       { label = 'Zsh', args = { 'zsh', '-l' } },
    }
