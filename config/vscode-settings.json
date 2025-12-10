@@ -1,0 +1,350 @@
+{
+  "terminal.integrated.shell.osx": "/bin/zsh",
+  "editor.fontFamily": "JetBrains Mono",
+  "editor.fontSize": 16,
+  "editor.formatOnPaste": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit"
+  },
+  "workbench.colorTheme": "Atom One Dark",
+  "workbench.iconTheme": "material-icon-theme",
+  "breadcrumbs.enabled": false,
+  "editor.tabSize": 4,
+  "editor.minimap.renderCharacters": false,
+  "editor.rulers": [120],
+  "editor.suggestSelection": "first",
+  "editor.inlineSuggest.enabled": true,
+  "editor.suggest.showMethods": true,
+  "editor.suggest.preview": true,
+  "editor.acceptSuggestionOnEnter": "on",
+  "editor.snippetSuggestions": "top",
+  "editor.codeActions.triggerOnFocusChange": true,
+
+  // File Management
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+
+  // Workbench
+  "workbench.startupEditor": "none",
+  "workbench.secondarySideBar.defaultVisibility": "hidden",
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter-notebook"
+  },
+
+  // Terminal
+  "terminal.integrated.enableMultiLinePasteWarning": false,
+  "terminal.integrated.persistentSessionScrollback": 100000,
+  "terminal.integrated.scrollback": 100000,
+
+  // Git
+  "git.ignoreMissingGitWarning": true,
+  "git.autofetch": true,
+  "git.openRepositoryInParentFolders": "never",
+  "githubPullRequests.pullBranch": "never",
+
+  // Language-specific
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 4
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[yaml]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+  "[python]": {
+    "editor.rulers": [90],
+    "editor.formatOnType": true
+  },
+  "[ruby]": {
+    "editor.formatOnSave": true,
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true
+  },
+  "[java]": {
+    "editor.formatOnType": true,
+    "editor.defaultFormatter": "redhat.java",
+    "editor.suggest.snippetsPreventQuickSuggestions": false
+  },
+
+  // Python
+  "python.languageServer": "Pylance",
+  "python.showStartPage": false,
+
+  // Java
+  "java.imports.gradle.wrapper.checksums": [
+    {
+      "sha256": "49a7e1341eb2e32f746a60f7069642eba79a66e8fbdeccfe09fab50f3fa808e6",
+      "allowed": true
+    }
+  ],
+  "java.format.enabled": true,
+  "java.format.onType.enabled": true,
+  "java.format.settings.profile": "GoogleStyle",
+  "java.format.settings.url": "https://raw.githubusercontent.com/google/styleguide/gh-pages/eclipse-java-google-style.xml",
+  "jdk.telemetry.enabled": true,
+
+  // TypeScript
+  "typescript.updateImportsOnFileMove.enabled": "always",
+
+  // C/C++
+  "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 4, ColumnLimit: 0}",
+
+  // Go
+  "go.toolsManagement.autoUpdate": true,
+
+  // Extensions
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "extensions.ignoreRecommendations": true,
+  "settingsSync.ignoredExtensions": [],
+  "security.workspace.trust.untrustedFiles": "newWindow",
+  "redhat.telemetry.enabled": true,
+  "boot-java.rewrite.reconcile": true,
+  "liveServer.settings.donotShowInfoMsg": true,
+  "docker.extension.enableComposeLanguageServer": false,
+
+  // GitHub Copilot
+  "github.copilot.enable": {
+    "*": false,
+    "plaintext": true,
+    "markdown": false,
+    "scminput": false,
+    "typescript": false,
+    "yaml": true,
+    "python": false,
+    "javascript": true
+  },
+  "github.copilot.editor.enableAutoCompletions": true,
+  "github.copilot.nextEditSuggestions.enabled": false,
+
+  // GitLens
+  "gitlens.ai.model": "vscode",
+  "gitlens.ai.vscode.model": "copilot:gpt-4.1",
+  "gitlens.advanced.messages": {
+    "suppressRebaseSwitchToTextWarning": true
+  },
+
+  // AWS
+  "aws.suppressPrompts": {
+    "fileViewerEdit": true
+  },
+  "aws.cloudformation.telemetry.enabled": false,
+
+  // PostgreSQL
+  "pgsql.serverGroups": [
+    {
+      "name": "Servers",
+      "id": "8B6005F4-264A-4292-BC00-7C106A947534",
+      "isDefault": true
+    }
+  ],
+  "pgsql.connections": [
+    {
+      "id": "B14EE15C-114F-4708-B6BC-183E13C694FF",
+      "groupId": "8B6005F4-264A-4292-BC00-7C106A947534",
+      "authenticationType": "SqlLogin",
+      "connectTimeout": 15,
+      "applicationName": "vscode-pgsql",
+      "clientEncoding": "utf8",
+      "sslmode": "prefer",
+      "savePassword": true,
+      "server": "localhost",
+      "user": "chat",
+      "port": "5432",
+      "database": "chat",
+      "password": "",
+      "sshPassword": "",
+      "profileName": "db, chat (chat)",
+      "expiresOn": 0
+    }
+  ],
+
+  // Notebook
+  "notebook.cellToolbarLocation": {
+    "default": "right",
+    "jupyter-notebook": "left"
+  },
+
+  // Claude Code
+  "claudeCode.preferredLocation": "panel",
+
+  // ============================================
+  // VIM CONFIGURATION
+  // ============================================
+  "vim.easymotion": true,
+  "vim.incsearch": true,
+  "vim.useSystemClipboard": true,
+  "vim.useCtrlKeys": false,
+  "vim.hlsearch": true,
+  "vim.leader": "<space>",
+  "vim.smartRelativeLine": true,
+
+  // Vim Insert Mode Keybindings
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["j", "j"],
+      "after": ["<Esc>"]
+    }
+  ],
+
+  // Vim Normal Mode Keybindings
+  "vim.normalModeKeyBindingsNonRecursive": [
+    // Delete line
+    {
+      "before": ["<leader>", "d"],
+      "after": ["d", "d"]
+    },
+    // Clear search highlighting
+    {
+      "before": ["<C-n>"],
+      "commands": [":nohl"]
+    },
+    {
+      "before": ["<leader>", "<space>"],
+      "commands": [":nohl"]
+    },
+    // Insert line break
+    {
+      "before": ["K"],
+      "commands": ["lineBreakInsert"],
+      "silent": true
+    },
+    // Save file
+    {
+      "before": ["<leader>", "w"],
+      "commands": ["workbench.action.files.save"]
+    },
+    // Close file
+    {
+      "before": ["<leader>", "q"],
+      "commands": ["workbench.action.closeActiveEditor"]
+    },
+    // Window navigation
+    {
+      "before": ["<C-h>"],
+      "commands": ["workbench.action.navigateLeft"]
+    },
+    {
+      "before": ["<C-j>"],
+      "commands": ["workbench.action.navigateDown"]
+    },
+    {
+      "before": ["<C-k>"],
+      "commands": ["workbench.action.navigateUp"]
+    },
+    {
+      "before": ["<C-l>"],
+      "commands": ["workbench.action.navigateRight"]
+    },
+    // Split navigation shortcuts
+    {
+      "before": ["<leader>", "h"],
+      "commands": ["workbench.action.focusLeftGroup"]
+    },
+    {
+      "before": ["<leader>", "j"],
+      "commands": ["workbench.action.focusBelowGroup"]
+    },
+    {
+      "before": ["<leader>", "k"],
+      "commands": ["workbench.action.focusAboveGroup"]
+    },
+    {
+      "before": ["<leader>", "l"],
+      "commands": ["workbench.action.focusRightGroup"]
+    },
+    // File explorer
+    {
+      "before": ["<leader>", "e"],
+      "commands": ["workbench.view.explorer"]
+    },
+    // Find files
+    {
+      "before": ["<leader>", "f", "f"],
+      "commands": ["workbench.action.quickOpen"]
+    },
+    // Find in files
+    {
+      "before": ["<leader>", "f", "g"],
+      "commands": ["workbench.action.findInFiles"]
+    },
+    // Show all commands
+    {
+      "before": ["<leader>", "p"],
+      "commands": ["workbench.action.showCommands"]
+    },
+    // Go to definition
+    {
+      "before": ["g", "d"],
+      "commands": ["editor.action.revealDefinition"]
+    },
+    // Go to references
+    {
+      "before": ["g", "r"],
+      "commands": ["editor.action.goToReferences"]
+    },
+    // Show hover
+    {
+      "before": ["g", "h"],
+      "commands": ["editor.action.showHover"]
+    }
+  ],
+
+  // Vim Visual Mode Keybindings
+  "vim.visualModeKeyBindingsNonRecursive": [
+    // Move lines up/down
+    {
+      "before": ["J"],
+      "commands": ["editor.action.moveLinesDownAction"]
+    },
+    {
+      "before": ["K"],
+      "commands": ["editor.action.moveLinesUpAction"]
+    },
+    // Better indenting
+    {
+      "before": ["<"],
+      "commands": ["editor.action.outdentLines"]
+    },
+    {
+      "before": [">"],
+      "commands": ["editor.action.indentLines"]
+    }
+  ],
+
+  // Keys that VSCode should handle instead of vim
+  "vim.handleKeys": {
+    "<C-a>": false,
+    "<C-f>": false,
+    "<C-b>": false,
+    "<C-p>": false
+  },
+
+  // Performance improvement
+  "extensions.experimental.affinity": {
+    "vscodevim.vim": 1,
+    "asvetliakov.vscode-neovim": 1
+  },
+
+  // Other settings
+  "stories.username": "Libya_Lilla",
+  "json.schemas": []
+}

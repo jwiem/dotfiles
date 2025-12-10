@@ -4,8 +4,13 @@ return {
    exit_behavior = 'CloseOnCleanExit', -- if the shell program exited with a successful status
    exit_behavior_messaging = 'Verbose',
    status_update_interval = 1000,
+   native_macos_fullscreen_mode = false, -- Faster fullscreen toggle
+   macos_window_background_blur = 20,    -- Nice blur effect
 
    scrollback_lines = 20000,
+   -- Automatically copy to clipboard when selecting text (macOS behavior)
+   -- Disable if you prefer manual copy with Cmd+C
+   selection_word_boundary = " \t\n{}[]()\"'`,;:@",
 
    hyperlink_rules = {
       -- Matches: a URL in parens: (URL)

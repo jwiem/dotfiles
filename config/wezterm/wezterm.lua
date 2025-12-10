@@ -1,3 +1,11 @@
+-- WezTerm Configuration
+-- Structure:
+--   config/       - Core configuration modules
+--   events/       - Custom event handlers
+--   utils/        - Utility functions and helpers
+--   colors/       - Color scheme definitions
+--   backdrops/    - Background images
+
 local Config = require('config')
 
 require('utils.backdrops')

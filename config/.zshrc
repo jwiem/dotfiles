@@ -145,3 +145,18 @@ export SDKMAN_DIR="$HOME/.sdkman"
 
 # Generated for envman. Do not edit.
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
+
+
+
+source $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# BEGIN ANSIBLE MANAGED BLOCK
+# .gravierc is used to store default run commands for your local environment
+# This is added as part of the ansible developer-desktop setup.
+# It is recommended that you leave this as part of your .zshrc file.
+source $HOME/.gravierc
+# END ANSIBLE MANAGED BLOCK
+eval "$(mise activate zsh)"
+
+# Added by Antigravity
+export PATH="/Users/jeff.wiemold/.antigravity/antigravity/bin:$PATH"
