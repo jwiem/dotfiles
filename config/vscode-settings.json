@@ -139,6 +139,7 @@
   "gitlens.ai.model": "vscode",
   "gitlens.ai.vscode.model": "copilot:gpt-4.1",
   "gitlens.advanced.messages": {
+    "suppressLineUncommittedWarning": true,
     "suppressRebaseSwitchToTextWarning": true
   },
 
@@ -158,22 +159,25 @@
   ],
   "pgsql.connections": [
     {
-      "id": "B14EE15C-114F-4708-B6BC-183E13C694FF",
+      "id": "F4E4FCC6-382F-4EB7-90DC-045F7A49D2E1",
       "groupId": "8B6005F4-264A-4292-BC00-7C106A947534",
       "authenticationType": "SqlLogin",
       "connectTimeout": 15,
       "applicationName": "vscode-pgsql",
       "clientEncoding": "utf8",
       "sslmode": "prefer",
+      "sshSavePassword": true,
       "savePassword": true,
+      "sslRootCertMode": "none",
       "server": "localhost",
-      "user": "chat",
-      "port": "5432",
-      "database": "chat",
+      "user": "ichra_banking",
       "password": "",
-      "sshPassword": "",
-      "profileName": "db, chat (chat)",
-      "expiresOn": 0
+      "profileName": "localhost, ichra_banking (ichra_banking)",
+      "connectionString": "postgresql://ichra_banking:ichra_banking@localhost:5432/ichra_banking",
+      "port": "5432",
+      "database": "ichra_banking",
+      "expiresOn": 0,
+      "sshPassword": ""
     }
   ],
 
@@ -346,5 +350,8 @@
 
   // Other settings
   "stories.username": "Libya_Lilla",
-  "json.schemas": []
+  "json.schemas": [],
+  "editor.stickyScroll.enabled": false,
+  "chat.viewSessions.orientation": "stacked",
+  "claudeCode.selectedModel": "default"
 }

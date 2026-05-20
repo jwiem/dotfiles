@@ -160,3 +160,6 @@ eval "$(mise activate zsh)"
 
 # Added by Antigravity
 export PATH="/Users/jeff.wiemold/.antigravity/antigravity/bin:$PATH"
+export PATH="$PATH:$HOME/.cargo/bin"
+
+. "$HOME/.local/bin/env"

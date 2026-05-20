@@ -26,6 +26,14 @@ print_error() {
     echo -e "${RED}[ERROR]${NC} $1"
 }
 
+# Step counter
+STEP=0
+TOTAL_STEPS=6
+print_step() {
+    STEP=$((STEP + 1))
+    print_info "Step ${STEP}/${TOTAL_STEPS}: $1"
+}
+
 # Get the dotfiles directory
 DOTFILES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 SCRIPTS_DIR="${DOTFILES_DIR}/scripts"
@@ -34,7 +42,7 @@ print_info "Starting dotfiles setup..."
 print_info "Dotfiles directory: ${DOTFILES_DIR}"
 
 # Step 1: Install Homebrew
-print_info "Step 1/6: Checking Homebrew installation..."
+print_step "Checking Homebrew installation..."
 if ! command -v brew &> /dev/null; then
     print_info "Installing Homebrew..."
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -50,7 +58,7 @@ else
 fi
 
 # Step 2: Install packages via Brewfile
-print_info "Step 2/6: Installing packages from Brewfile..."
+print_step "Installing packages from Brewfile..."
 if [ -f "${DOTFILES_DIR}/Brewfile" ]; then
     brew bundle --file="${DOTFILES_DIR}/Brewfile"
     print_success "Packages installed"
@@ -60,7 +68,7 @@ else
 fi
 
 # Step 3: Install Oh My Zsh
-print_info "Step 3/6: Installing Oh My Zsh..."
+print_step "Installing Oh My Zsh..."
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
     print_success "Oh My Zsh installed"
@@ -69,21 +77,24 @@ else
 fi
 
 # Step 4: Install Zsh plugins
-print_info "Step 4/6: Installing Zsh plugins..."
+print_step "Installing Zsh plugins..."
 "${SCRIPTS_DIR}/install-zsh-plugins.sh"
 print_success "Zsh plugins installed"
 
-# Step 5: Install Tmux Plugin Manager
-print_info "Step 5/6: Installing Tmux Plugin Manager..."
+# Step 5: Install Tmux Plugin Manager and plugins
+print_step "Installing Tmux Plugin Manager..."
 if [ ! -d "$HOME/.tmux/plugins/tpm" ]; then
     git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
     print_success "Tmux Plugin Manager installed"
 else
     print_success "Tmux Plugin Manager already installed"
 fi
+print_info "Installing tmux plugins..."
+"$HOME/.tmux/plugins/tpm/bin/install_plugins" &> /dev/null
+print_success "Tmux plugins installed"
 
 # Step 6: Run dotbot to create symlinks
-print_info "Step 6/6: Creating symlinks with dotbot..."
+print_step "Creating symlinks with dotbot..."
 "${DOTFILES_DIR}/install"
 print_success "Symlinks created"
 
@@ -95,6 +106,5 @@ print_success "========================================"
 echo ""
 print_info "Next steps:"
 print_info "1. Restart your terminal or run: source ~/.zshrc"
-print_info "2. Open tmux and press prefix + I to install tmux plugins"
-print_info "3. Verify installation by running: which zsh brew nvim tmux"
+print_info "2. Verify installation by running: which zsh brew nvim tmux"
 echo ""
