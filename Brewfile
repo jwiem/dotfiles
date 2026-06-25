@@ -14,6 +14,8 @@ tap "koekeishiya/formulae"
 # brew "jq"
 # brew "lazygit"
 brew "neovim"
+brew "ripgrep"  # Telescope live_grep/grep_string backend
+brew "fd"       # Telescope find_files backend
 
 # Node.js
 # brew "fnm"
