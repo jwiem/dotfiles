@@ -43,18 +43,23 @@ return {
         return config
       end
 
+      -- Only register JDK runtimes whose paths actually exist on this machine,
+      -- so the config stays portable: each machine self-selects whatever JDKs it
+      -- has installed and missing paths are dropped instead of breaking jdtls.
+      local java_runtimes = vim.tbl_filter(function(r)
+        return uv.fs_stat(r.path) ~= nil
+      end, {
+        { name = "JavaSE-17", path = "/Library/Java/JavaVirtualMachines/temurin-17.jdk/Contents/Home" },
+        -- mise install path is version-pinned; update if you bump Corretto.
+        { name = "JavaSE-21", path = vim.env.HOME .. "/.local/share/mise/installs/java/corretto-21.0.6.7.1" },
+        { name = "JavaSE-25", path = "/Library/Java/JavaVirtualMachines/temurin-25.jdk/Contents/Home" },
+      })
+
       -- jdtls settings deltas, deep-merged onto LazyVim's defaults.
       opts.settings = vim.tbl_deep_extend("force", opts.settings or {}, {
         java = {
-          -- Register every JDK on this machine so jdtls can validate/run
-          -- projects against the runtime matching their source level.
           configuration = {
-            runtimes = {
-              { name = "JavaSE-17", path = "/Library/Java/JavaVirtualMachines/temurin-17.jdk/Contents/Home" },
-              -- mise install path is version-pinned; update if you bump Corretto.
-              { name = "JavaSE-21", path = "/Users/jeff.wiemold/.local/share/mise/installs/java/corretto-21.0.6.7.1" },
-              { name = "JavaSE-25", path = "/Library/Java/JavaVirtualMachines/temurin-25.jdk/Contents/Home" },
-            },
+            runtimes = java_runtimes,
           },
           -- Static members offered as auto-import completions (test-heavy code).
           completion = {
