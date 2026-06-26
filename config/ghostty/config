@@ -1,0 +1,49 @@
+# Ghostty config — based on https://github.com/vossenwout/pookie-dotfiles
+# Reload with cmd+shift+, (or quit/reopen). Docs: https://ghostty.org/docs/config
+
+# --- Appearance ---------------------------------------------------------
+# FiraCode Nerd Font (installed) instead of pookie's plain Fira Code,
+# so tmux Dracula and LazyVim icon glyphs render.
+font-family = "FiraCode Nerd Font"
+font-size = 14
+
+theme = guts
+background-opacity = 1
+background-blur = true
+
+# Animated cursor trail
+custom-shader = ~/.config/ghostty/shaders/cursor.glsl
+
+mouse-hide-while-typing = true
+macos-titlebar-proxy-icon = hidden
+title = " "
+
+# --- Shell --------------------------------------------------------------
+# Ghostty runs your login shell (zsh) by default; ~/.zshrc loads as usual.
+# Uncomment to drop straight into your tmux config on every new window:
+# command = /opt/homebrew/bin/tmux new -A -s main
+
+# --- Keybinds (splits, vim-style) ----------------------------------------
+keybind = opt+h=goto_split:left
+keybind = opt+j=goto_split:bottom
+keybind = opt+k=goto_split:top
+keybind = opt+l=goto_split:right
+
+keybind = opt+shift+h=new_split:left
+keybind = opt+shift+j=new_split:down
+keybind = opt+shift+k=new_split:up
+keybind = opt+shift+l=new_split:right
+
+# ctrl+[ as escape, shift+enter for newline in TUIs (e.g. Claude Code)
+keybind = ctrl+left_bracket=text:\x1b
+keybind = shift+enter=text:\x1b[13;2u
+
+# --- Option key behaves as alt (needed for the binds above + nvim/tmux) --
+macos-option-as-alt = true
+keybind = alt+up=esc:[1;3A
+keybind = alt+down=esc:[1;3B
+keybind = alt+left=esc:[1;3D
+keybind = alt+right=esc:[1;3C
+
+# --- Misc ----------------------------------------------------------------
+clipboard-write = allow

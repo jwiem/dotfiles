@@ -20,6 +20,8 @@
       path: ./config/nvim
     ~/.config/wezterm:
       path: ./config/wezterm/
+    ~/.config/ghostty:
+      path: ./config/ghostty/
     ~/Library/Application Support/Code/User/settings.json:
       path: ./config/vscode-settings.json
 #    ~/.config/tmux/tmux-nerd-font-window-name.yml:
