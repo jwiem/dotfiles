@@ -7,7 +7,35 @@
 font-family = "FiraCode Nerd Font"
 font-size = 14
 
-theme = guts
+# Colors ported from WezTerm (config/wezterm/colors/custom.lua):
+# altered Catppuccin Mocha base/fg/cursor + Campbell-style ANSI palette.
+# theme = guts   # previous theme — uncomment (and comment the block below) to switch back
+background = #1f1f28
+foreground = #cdd6f4
+cursor-color = #f5e0dc
+cursor-text = #11111b
+selection-background = #585b70
+selection-foreground = #cdd6f4
+split-divider-color = #6c7086
+
+# ANSI palette (0-7 normal, 8-15 bright)
+palette = 0=#0C0C0C
+palette = 1=#C50F1F
+palette = 2=#13A10E
+palette = 3=#C19C00
+palette = 4=#0037DA
+palette = 5=#881798
+palette = 6=#3A96DD
+palette = 7=#CCCCCC
+palette = 8=#767676
+palette = 9=#E74856
+palette = 10=#16C60C
+palette = 11=#F9F1A5
+palette = 12=#3B78FF
+palette = 13=#B4009E
+palette = 14=#61D6D6
+palette = 15=#F2F2F2
+
 background-opacity = 1
 background-blur = true
 
