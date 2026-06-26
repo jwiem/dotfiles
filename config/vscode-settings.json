@@ -353,5 +353,7 @@
   "json.schemas": [],
   "editor.stickyScroll.enabled": false,
   "chat.viewSessions.orientation": "stacked",
-  "claudeCode.selectedModel": "default"
+  "claudeCode.selectedModel": "default",
+  "kotlin.languageServer.enabled": false,
+  "kotlin.debugAdapter.enabled": false
 }

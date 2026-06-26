@@ -53,5 +53,5 @@ return {
       brightness = 1,
    },
    initial_cols = 120,
-   initial_rows = 50
+   initial_rows = 44
 }
